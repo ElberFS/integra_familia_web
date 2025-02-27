@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import HeaderMobile from "./mobile/HeaderMobile";
-import BotonVoluntario from "./BotonVoluntario";
+import BotonVoluntario from "./BottonVoluntario.jsx";
 
 const Header = () => {
     const [isMobile, setIsMobile] = useState(false);
