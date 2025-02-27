@@ -8,7 +8,7 @@ const HomeMobile = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
-        <div className="relative">
+        <div id="HomeMobile"  className="relative">
             {/* Video de fondo */}
             <video className="w-full h-screen object-cover" src={Hero_video} autoPlay loop muted></video>
 
