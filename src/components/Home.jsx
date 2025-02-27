@@ -1,14 +1,23 @@
-import { useState } from "react";
+import {useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "../styles/global.css";
 import Hero_video from "../assets/video/Hero_Video.mp4";
+import HomeMobile  from "./mobile/HomeMobile";
 import BottonVoluntario from "./BottonVoluntario";
 
 const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
-    return (
-        <div className="relative">
+    useEffect(() => {
+        const checkScreenSize = () => setIsMobile(window.innerWidth < 768);
+        checkScreenSize();
+        window.addEventListener("resize", checkScreenSize);
+        return () => window.removeEventListener("resize", checkScreenSize);
+    }, []);
+
+    return isMobile ? <HomeMobile /> : (
+        <div id="Home" className="relative">
             {/* Video de fondo */}
             <video className="w-full h-screen object-cover" src={Hero_video} autoPlay loop muted></video>
 
@@ -39,7 +48,7 @@ const Home = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.6 }}
                 >
-                    <a href="https://www.youtube.com/watch?v=4DTUduyIWAw&t=370s" target="_blank" className="bg-sky-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-sky-700 transition">
+                    <a href="https://www.youtube.com/watch?v=4DTUduyIWAw&t=370s" target="_blank" className="bg-sky-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-sky-800 transition">
                         Más Información
                     </a>
                     <button 

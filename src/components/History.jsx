@@ -34,7 +34,7 @@ const History = () => {
                 className="bg-sky-200 w-full" 
             />
 
-            <section ref={sectionRef} className="relative bg-sky-200 py-10 px-6 md:px-20 max-h-2xl">
+            <section id="History" ref={sectionRef} className="relative bg-sky-200 py-10 px-6 md:px-20 max-h-2xl">
                 <div className="relative -mt-20 grid md:grid-cols-2 gap-5 items-center">
                     <div className="relative">
                         <div className="relative inline-block p-3 rounded-lg">

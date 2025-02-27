@@ -2,17 +2,21 @@ import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import "../styles/global.css";
 import About_img01 from "../assets/image/Serviceimg01.png";
+import ServiceModal from "./Service_Modal.jsx";
+import ServiceModalMobile from "./mobile/ServiceModalMobile.jsx"; 
 
-const About = () => {
+const Service = () => {
     const ref = useRef(null);
     const [inView, setInView] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Detecta si es móvil
 
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setInView(true);
-                    observer.disconnect(); // Detener la observación una vez activada
+                    observer.disconnect();
                 }
             },
             { threshold: 0.3 }
@@ -25,9 +29,18 @@ const About = () => {
         return () => observer.disconnect();
     }, []);
 
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     return (
-        <section ref={ref} className="py-16 px-6 md:px-20">
-            <div className="-mt-10 grid md:grid-cols-2 gap-5 items-center">
+        <section id="Service" ref={ref} className="py-16 px-6 md:px-20">
+            <div  className="-mt-10 grid md:grid-cols-2 gap-5 items-center">
                 <div className="relative">
                     <motion.h3 
                         className="text-sky-900 font-bold text-2xl uppercase"
@@ -59,10 +72,11 @@ const About = () => {
                         empoderando a los niños para que prosperen en todos los aspectos de sus vidas.
                     </motion.p>
                     <motion.button 
-                        className="mt-10 bg-sky-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-800 transition"
+                        className="mt-10 bg-sky-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-sky-800 transition"
                         initial={{ opacity: 0, y: 50 }}
                         animate={inView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.8 }}
+                        onClick={() => setIsModalOpen(true)}
                     >
                         Ver Todos Los Servicios
                     </motion.button>
@@ -74,8 +88,14 @@ const About = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Modal dinámico según el dispositivo */}
+            {isModalOpen && (
+                isMobile ? <ServiceModalMobile onClose={() => setIsModalOpen(false)} /> 
+                        : <ServiceModal onClose={() => setIsModalOpen(false)} />
+            )}
         </section>
     );
 };
 
-export default About;
+export default Service;

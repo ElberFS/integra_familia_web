@@ -19,7 +19,7 @@ const values = [
 
 const ValuesMobile = () => {
     return (
-        <section className="bg-white py-16 px-6">
+        <section id="ValuesMobile" className="bg-white py-16 px-6">
         <div className="text-center">
             <motion.h3
             className="text-3xl font-bold uppercase text-sky-800"

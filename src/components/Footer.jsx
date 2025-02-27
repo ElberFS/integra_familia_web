@@ -5,10 +5,9 @@ import Instagram from "../assets/svg/instagram-svg.svg";
 import Whatsapp from "../assets/svg/whatsapp-svg.svg";
 
 const Footer = () => {
-    const [showModal, setShowModal] = useState(false);
 
     return (
-        <footer className="bg-sky-900 text-white py-24 px-6 md:px-20">
+        <footer  className="bg-sky-900 text-white py-24 px-6 md:px-20">
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
                 
                 {/* Sección de contacto */}

@@ -29,7 +29,7 @@ const Values = () => {
     }, []);
 
     return isMobile ? <ValuesMobile /> : (
-        <section ref={sectionRef} className="relative bg-white py-16 px-6 md:px-20">
+        <section id="Values" ref={sectionRef} className="relative bg-white py-16 px-6 md:px-20">
             {/* Títulos con animación */}
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -51,12 +51,12 @@ const Values = () => {
                 {[{ img: Fortaleza, label: "Fortaleza", border: "border-blue-500" },
                     { img: Amor, label: "Amor", border: "border-yellow-500" },
                     { img: Mutuo_Respeto, label: "Mutuo Respeto", border: "border-green-500" },
-                    { img: Integridad, label: "Integridad", border: "border-red-500" }]
-                    .map(({ img, label, border }, index) => (
+                    { img: Integridad, label: "Integridad", border: "border-red-500" }].map(({ img, label, border }, index) => (
                         <motion.div 
                             key={index} 
                             initial={{ opacity: 0, scale: 0.8 }} 
                             animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                            whileHover={{ scale: 1.1, rotate: 5 }} // Efecto al pasar el mouse
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="flex flex-col items-center"
                         >
@@ -76,12 +76,12 @@ const Values = () => {
             >
                 {[{ img: Lealtad, label: "Lealtad", border: "border-indigo-500" },
                     { img: Impulso_Crecimiento, label: "Impulso al Crecimiento", border: "border-purple-500" },
-                    { img: Apoyo, label: "Apoyo", border: "border-orange-500" }]
-                    .map(({ img, label, border }, index) => (
+                    { img: Apoyo, label: "Apoyo", border: "border-orange-500" }].map(({ img, label, border }, index) => (
                         <motion.div 
                             key={index} 
                             initial={{ opacity: 0, scale: 0.8 }} 
                             animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                            whileHover={{ scale: 1.1, rotate: 5 }} // Efecto al pasar el mouse
                             transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
                             className="flex flex-col items-center"
                         >
