@@ -3,9 +3,9 @@ import "../styles/global.css";
 import Hero_video from '../assets/video/Hero_Video.mp4';
 ---
 
-<div class="relative -mt-30">
+<div class="relative  -mt-40">
     <!-- Video de fondo -->
-    <video class="w-full h-auto object-cover" src={Hero_video} autoplay loop muted></video>
+    <video class="w-full h-screen object-cover" src={Hero_video} autoplay loop muted ></video>
 
     <!-- Contenedor del texto -->
     <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-start p-10 md:p-20 bg-gradient-to-r from-black/50 to-transparent">
@@ -19,13 +19,20 @@ import Hero_video from '../assets/video/Hero_Video.mp4';
         <!-- Botones -->
         <div class="mt-6 flex space-x-4">
             <a href="#" class="bg-sky-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-sky-700 transition">
-                Conviértete en un Defensor
+                Más Información
             </a>
             <a href="#" class="border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition">
                 Ofrécete Como Voluntario
             </a>
         </div>
     </div>
+    
+    <!-- Curva inferior -->
+    <img src="https://cdn.prod.website-files.com/63ab0fc5785d7f0ec0f87f52/63bce8355e8fa2bba32f9ea5_divider-3.svg" 
+        loading="lazy" alt="Curva inferior" 
+        class="absolute bottom-0 left-0 w-full h-auto z-10 translate-y-[10px]">
+</div>
+
     
     <!-- Curva inferior debajo de los botones -->
     <img src="https://cdn.prod.website-files.com/63ab0fc5785d7f0ec0f87f52/63bce8355e8fa2bba32f9ea5_divider-3.svg" 

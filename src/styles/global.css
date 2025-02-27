@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'MaxLock';
+    src: url('/src/assets/fonts/MaxLock.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Crea una clase específica */
+.font-maxlock {
+    font-family: 'MaxLock';
+}
+
+@font-face {
+    font-family: 'Daily';
+    src: url('/src/assets/fonts/Daily.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Crea una clase específica */
+.font-daily {
+    font-family: 'Daily';
+}
