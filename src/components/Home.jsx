@@ -2,8 +2,8 @@ import {useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "../styles/global.css";
 import Hero_video from "../assets/video/Hero_Video.mp4";
-import HomeMobile  from "./mobile/HomeMobile";
-import BottonVoluntario from "./BottonVoluntario";
+import HomeMobile  from "./mobile/HomeMobile.jsx";
+import BottonVoluntario from "./BottonVoluntario.jsx";
 
 const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);

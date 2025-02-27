@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import HeaderMobile from "./mobile/HeaderMobile";
+import HeaderMobile from "./mobile/HeaderMobile.jsx";
 import BotonVoluntario from "./BottonVoluntario.jsx";
 
 const Header = () => {
